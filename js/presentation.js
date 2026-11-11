@@ -49,7 +49,7 @@
   const opportunities = [
     C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: '', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en un entorno tecnológico', imageKey: 'ima_p3', compact: true }),
     `<div class="opportunity-stats">`,
-    C.card({ metric: '95%', body: 'Tasa de graduados empleados', variant: 'info-card--yellow info-card--blue-rail' }),
+    C.card({ metric: '95%', body: 'Tasa de graduados empleados en el area', variant: 'info-card--yellow info-card--blue-rail' }),
     // `<article class="abet-card"><img src="assets/images/abet-accreditation-white.png" alt="Carrera acreditada internacionalmente por ABET"></article>`,
     // C.card({ title: 'Acreditación Internacional por ABET', body: 'Computing Accreditation Commision (U.S.A)', variant: 'info-card--pale' }),
 
