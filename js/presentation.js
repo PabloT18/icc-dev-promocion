@@ -4,12 +4,12 @@
   const slides = [];
 
   const careers = [
-    { icon: '&lt;/&gt;', title: 'Desarrollo de software', body: 'Apps web, móviles y empresariales.' },
-    { icon: '✚', title: 'Inteligencia Artificial', body: 'Desarrolla soluciones con IA y aprendizaje automático.' },
-    { icon: '▥', title: 'Big Data', body: 'Gestiona datos y crea soluciones para analizarlos.' },
-    { icon: '◇', title: 'Ciberseguridad', body: 'Protege el Software, y gestiona proceso de protección de datos' },
-    { icon: '✚', title: 'Desarrollador/a de aplicaciones IoT', body: 'Conecta dispositivos y crea soluciones inteligentes.' },
-    { icon: '☁', title: 'Computación en la nube', body: 'Diseña y administra servicios e infraestructura cloud.' }
+    { icon: 'code-xml', title: 'Desarrollo de software', body: 'Apps web, móviles y empresariales.' },
+    { icon: 'brain', title: 'Inteligencia Artificial', body: 'Desarrolla soluciones con IA y aprendizaje automático.' },
+    { icon: 'database', title: 'Big Data', body: 'Gestiona datos y crea soluciones para analizarlos.' },
+    { icon: 'shield-check', title: 'Ciberseguridad', body: 'Protege el Software, y gestiona proceso de protección de datos' },
+    { icon: 'cpu', title: 'Desarrollador/a de aplicaciones IoT', body: 'Conecta dispositivos y crea soluciones inteligentes.' },
+    { icon: 'cloud', title: 'Computación en la nube', body: 'Diseña y administra servicios e infraestructura cloud.' }
   ];
 
   const cover = [
@@ -30,9 +30,9 @@
     ),
     `</div>`,
     `<div class="cover-facts">`,
-    C.card({ icon: '★', title: 'Título a obtener', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
-    C.card({ icon: '◎', title: 'Área del conocimiento', body: 'Tecnologías de la Información y Comunicación', variant: 'fact-card' }),
-    C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
+    C.card({ icon: 'graduation-cap', title: 'Título a obtener', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
+    C.card({ icon: 'network', title: 'Área del conocimiento', body: 'Tecnologías de la Información y Comunicación', variant: 'fact-card' }),
+    C.card({ icon: 'calendar-days', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
     `</div>`,
     `<div class="cover-slogan">TECNOLOGÍA QUE RESUELVE PROBLEMAS REALES</div>`,
     C.footer()
@@ -65,7 +65,7 @@
     }),
 
     C.card({
-      icon: '🌐',
+      icon: 'badge-check',
       title: 'Acreditación internacional por ABET',
       body: 'Computing Accreditation Commission (U.S.A.)',
       variant: 'postgraduate-card '
@@ -80,6 +80,7 @@
   slides.push(C.slide('work-slide', work, 'En qué puedes trabajar'));
   slides.push(C.slide('opportunity-slide', opportunities, 'Beneficios y oportunidades'));
   deck.innerHTML = slides.join('');
+  window.lucide.createIcons();
   resolveRequestedImages();
 
   const slideElements = [...deck.querySelectorAll('.slide')];

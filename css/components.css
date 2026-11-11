@@ -80,6 +80,13 @@
   text-align: center;
 }
 
+.card-icon svg {
+  width: 42%;
+  max-width: 32px;
+  height: auto;
+  stroke-width: 2.2;
+}
+
 .fact-card {
   padding-left: 115px;
 }

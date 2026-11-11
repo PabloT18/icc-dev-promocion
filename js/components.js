@@ -20,7 +20,11 @@
   }
 
   function card({ title, body, icon, metric, variant = '', iconVariant = '' }) {
-    const iconMarkup = icon ? `<span class="card-icon ${iconVariant}" aria-hidden="true">${icon}</span>` : '';
+    const iconMarkup = icon
+      ? icon === '4+1'
+        ? `<span class="card-icon ${iconVariant}" aria-hidden="true">4+1</span>`
+        : `<span class="card-icon ${iconVariant}" aria-hidden="true"><i data-lucide="${escapeHtml(icon)}"></i></span>`
+      : '';
     const titleMarkup = title ? `<h2>${escapeHtml(title)}</h2>` : '';
     const bodyMarkup = body ? `<p>${body}</p>` : '';
     const metricMarkup = metric ? `<strong class="card-metric">${escapeHtml(metric)}</strong>` : '';
