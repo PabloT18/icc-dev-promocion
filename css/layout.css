@@ -1,0 +1,90 @@
+.toolbar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 9px 16px;
+  background: var(--white);
+  box-shadow: 0 3px 16px #102b5520;
+}
+
+.control-button {
+  min-height: 38px;
+  padding: 9px 17px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--navy);
+  color: var(--white);
+  font: 700 14px var(--font);
+  cursor: pointer;
+}
+
+.control-button:hover {
+  background: var(--blue);
+}
+
+.control-button:disabled {
+  opacity: .65;
+  cursor: progress;
+}
+
+.control-button--yellow {
+  background: var(--yellow);
+  color: var(--navy);
+}
+
+.control-button--yellow:hover {
+  background: #f2c600;
+}
+
+.slide-counter {
+  min-width: 54px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.download-status {
+  position: absolute;
+  top: 100%;
+  margin-top: 6px;
+  padding: 7px 12px;
+  border-radius: 7px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 13px;
+}
+
+.download-status:empty {
+  display: none;
+}
+
+.deck {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.slide {
+  width: min(100%, 1280px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 1.4%;
+  padding: 3.25%;
+  background: var(--paper);
+  box-shadow: 0 12px 36px #0b2f6f20;
+  break-after: page;
+  page-break-after: always;
+}
+
+.slide:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}

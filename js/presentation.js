@@ -21,7 +21,13 @@
     `<p class="cover-description">Diseña soluciones inteligentes, crea y utiliza modelos y agentes de IA para resolver problemas y automatizar tareas.</p>`,
     `<img class="hero-accreditation" src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET">`,
     `</div>`,
-    C.imageFrame('assets/images/students-collaborating.jpg', 'Estudiantes colaborando en un proyecto de computación', 'cover-photo', 'ima_p1'),
+    // C.imageFrame('assets/images/students-collaborating.jpg', 'Estudiantes colaborando en un proyecto de computación', 'cover-photo', 'ima_p1'),
+    C.imageFrame(
+      'assets/images/students-collaborating.jpg',
+      'Estudiantes colaborando en un proyecto de computación',
+      'cover-photo',
+      'ima_p1'
+    ),
     `</div>`,
     `<div class="cover-facts">`,
     C.card({ icon: '★', title: 'Título a obtener:', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
@@ -41,10 +47,10 @@
   ].join('');
 
   const opportunities = [
-    C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: 'QUE LLAMAN LA ATENCIÓN', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en un entorno tecnológico', imageKey: 'ima_p3', compact: true }),
+    C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: '', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en un entorno tecnológico', imageKey: 'ima_p3', compact: true }),
     `<div class="opportunity-stats">`,
     C.card({ metric: '144', body: 'De 215 inscritos en el periodo 67', variant: 'info-card--yellow info-card--blue-rail' }),
-    `<article class="abet-card"><img src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET"></article>`,
+    `<article class="abet-card"><img src="assets/images/abet-accreditation-white.png" alt="Carrera acreditada internacionalmente por ABET"></article>`,
     C.card({ title: 'Amplio campo laboral', body: 'Software, IA, redes e infraestructura tecnológica', variant: 'info-card--pale' }),
     `</div>`,
     `<div class="postgraduate-grid">`,

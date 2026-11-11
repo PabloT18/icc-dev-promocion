@@ -129,6 +129,7 @@ body {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   gap: 2.2%;
+  margin-bottom: 5px;
 }
 
 .hero-panel {
@@ -146,7 +147,7 @@ body {
 }
 
 .brand-lockup img {
-  width: 250px;
+  width: 300px;
   max-height: 72px;
   object-fit: contain;
   object-position: left center;
@@ -178,7 +179,8 @@ body {
 
 .hero-subtitle {
   margin: 17px 0 0;
-  font-size: var(--font-body);
+  /* font-size: var(--font-body); */
+  font-size: 22px;
   line-height: 1.34;
 }
 
@@ -204,11 +206,14 @@ body {
 
 .slide-header--compact {
   grid-template-columns: 2.2fr 1fr;
+
+
 }
 
 .slide-header--compact .hero-panel {
-  padding: 10px 30px;
-  gap: 8px;
+  padding: 20px 30px;
+  gap: 12px;
+
 }
 
 .slide-header--compact .hero-panel h1 {
@@ -218,7 +223,7 @@ body {
 
 .slide-header--compact .hero-subtitle {
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.15;
   font-style: italic;
 }
@@ -227,11 +232,45 @@ body {
   font-weight: 500;
 }
 
-.opportunity-slide .slide-header--compact .hero-subtitle {
-  text-align: right;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 800;
+.work-slide .slide-header,
+.opportunity-slide .slide-header {
+  height: 100%;
+  align-items: center;
+}
+
+.work-slide .slide-header__image,
+.opportunity-slide .slide-header__image {
+  height: 100%;
+  align-self: stretch;
+}
+
+.work-slide .hero-panel,
+.opportunity-slide .hero-panel {
+  align-self: center;
+  height: auto;
+  min-height: 0;
+}
+
+.opportunity-slide {
+  grid-template-rows:
+    minmax(220px, 28%) minmax(118px, 21%) minmax(118px, 20%) auto auto auto;
+  gap: 10px;
+}
+
+.opportunity-slide .slide-header {
+  min-height: 0;
+}
+
+.opportunity-slide .slide-header--compact {
+  align-items: center;
+}
+
+
+
+.opportunity-slide .hero-panel {
+
+  align-self: center;
+  justify-content: center;
 }
 
 .info-card {
@@ -320,14 +359,24 @@ body {
 .cover-layout {
   min-height: 0;
   display: grid;
+  /* grid-template-columns: 1.5fr 1fr; */
   grid-template-columns: 1.5fr 1fr;
   gap: 2.2%;
+  padding: 5px;
+
+}
+
+
+.cover-photo {
+  width: 85%;
+  /* height: 100%; */
+  justify-self: center;
+  align-self: center;
 }
 
 .cover-hero {
   position: relative;
   grid-template-rows: auto auto auto 1fr auto;
-  padding-bottom: 24px;
   min-width: 0;
   min-height: 0;
   overflow: hidden;
@@ -356,9 +405,8 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 2%;
-  margin-top: 2%;
-
+  margin-bottom: 1%;
+  margin-top: 1%;
 
 }
 
@@ -366,16 +414,16 @@ body {
   max-width: 96%;
   margin: 0;
   color: var(--white);
-  font-size: clamp(27px, 2.5vw, 32px);
+  font-size: clamp(25px, 2.5vw, 32px);
   line-height: 1.16;
-  font-weight: 750;
+  font-weight: 650;
 }
 
 .cover-description {
   max-width: 94%;
   margin: 0;
   color: var(--white);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.24;
 }
 
@@ -383,16 +431,23 @@ body {
 
 
 
-
 .hero-accreditation {
-  position: static;
-  justify-self: end;
-  align-self: end;
-  width: min(440px, 50%);
-  max-height: 100px;
+  width: 450px;
+  max-height: 72px;
   object-fit: contain;
-  object-position: right center;
+  object-position: center;
+  justify-self: center;
 }
+
+.hero-accreditation-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 72px;
+  padding-bottom: 10px;
+}
+
+
 
 .cover-layout .image-frame {
   min-height: 0;
@@ -432,13 +487,16 @@ body {
 }
 
 .work-slide {
-  grid-template-rows: 25% minmax(0, 1fr) auto auto auto;
+  grid-template-rows: 30% minmax(0, 1fr) auto auto auto;
   gap: 10px;
 }
 
 .work-slide .slide-header {
   min-height: 0;
 }
+
+
+
 
 .career-grid {
   min-height: 0;
@@ -483,14 +541,6 @@ body {
   font-weight: 750;
 }
 
-.opportunity-slide {
-  grid-template-rows: 23% minmax(118px, 21%) minmax(118px, 20%) auto auto auto;
-  gap: 10px;
-}
-
-.opportunity-slide .slide-header {
-  min-height: 0;
-}
 
 .opportunity-stats {
   min-height: 0;
@@ -650,7 +700,7 @@ body {
   }
 
   .cover-description {
-    font-size: clamp(9px, 1.6vw, 16px);
+    font-size: clamp(9px, 1.6vw, 12px);
   }
 
   .hero-panel h1,

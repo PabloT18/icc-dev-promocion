@@ -1,0 +1,71 @@
+@page {
+  size: 13.333333in 7.5in;
+  margin: 0;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 13.333333in;
+    margin: 0;
+    background: var(--paper);
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .deck {
+    display: block;
+    padding: 0;
+  }
+
+  .slide {
+    width: 13.333333in;
+    height: 7.5in;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    aspect-ratio: auto;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .slide:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .cover-hero {
+    gap: 10px;
+    padding: 3.25% 4%;
+  }
+
+  .cover-title {
+    font-size: 37px;
+  }
+
+  .cover-tagline {
+    font-size: 30px;
+  }
+
+  .cover-description {
+    font-size: 19px;
+  }
+
+  .hero-accreditation {
+    width: 190px;
+    max-height: 34px;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

@@ -1,0 +1,26 @@
+ESTILOS PRESENTACIÓN UPS
+
+Estructura
+- css/root.css: punto de entrada que importa los demás estilos.
+- css/tokens.css: variables, tipografía y estilos generales.
+- css/layout.css: barra de controles, deck y diapositivas.
+- css/headers.css: encabezados, paneles e imágenes.
+- css/components.css: tarjetas, iconos y pie institucional.
+- css/cover.css: portada.
+- css/career.css: contenido y grilla de oportunidades laborales.
+- css/opportunities.css: P2/P3 y estadísticas de oportunidades.
+- css/responsive.css: ajustes para pantallas estrechas.
+- css/print.css: salida de impresión/PDF.
+
+Integración
+1. Descomprime la carpeta css en la misma carpeta donde está index.html.
+2. En index.html, elimina el enlace anterior a presentation.css y agrega dentro de <head>:
+   <link rel="stylesheet" href="css/root.css">
+3. Conserva la estructura de clases que generan js/components.js y js/presentation.js.
+4. Abre la página con el servidor local habitual y revisa P2 y P3.
+
+Ajustes P2/P3
+Ambas imágenes tienen altura de 220px en pantalla. Para cambiar ambas, modifica el primer valor de grid-template-rows en .work-slide y .opportunity-slide dentro de css/opportunities.css.
+El panel azul se centra dentro de la fila y toma la altura que requiere su contenido. No se cambia su padding ni su tipografía.
+
+Nota: la regla de @media (max-width: 800px) hace la tipografía más pequeña en pantallas angostas. Para impresión, print.css mantiene el formato horizontal definido por @page.

@@ -1,0 +1,35 @@
+:root {
+  --navy: #052b69;
+  --blue: #005bbb;
+  --yellow: #ffd300;
+  --paper: #f7f9fd;
+  --white: #ffffff;
+  --ink: #052b69;
+  --muted: #5c7397;
+  --pale: #eef4ff;
+  --line: #d8e6ff;
+  --font: Aptos, "Aptos Display", Calibri, Arial, sans-serif;
+  --font-cover-title: 37px;
+  --font-title: 36px;
+  --font-card-title: 23px;
+  --font-body: 18px;
+  --font-footer: 13px;
+  --radius-card: 24px;
+  --radius-hero: 48px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #e8edf5;
+  font-family: var(--font);
+}

@@ -1,0 +1,36 @@
+/* Encabezados P2/P3: igual altura de imagen, panel según su contenido */
+.work-slide {
+  grid-template-rows: 220px minmax(0, 1fr) auto auto auto;
+  gap: 10px;
+}
+
+.opportunity-slide {
+  grid-template-rows: 220px minmax(118px, 21%) minmax(118px, 20%) auto auto auto;
+  gap: 10px;
+}
+
+.work-slide .slide-header,
+.opportunity-slide .slide-header {
+  height: 100%;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.work-slide .slide-header__image,
+.opportunity-slide .slide-header__image {
+  height: 100%;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.work-slide .hero-panel,
+.opportunity-slide .hero-panel {
+  height: auto;
+  min-height: 0;
+  align-self: center;
+}
+
+.work-slide .slide-header--compact .hero-subtitle {
+  font-weight: 500;
+}
+
