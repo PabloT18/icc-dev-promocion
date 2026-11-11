@@ -30,7 +30,7 @@
     ),
     `</div>`,
     `<div class="cover-facts">`,
-    C.card({ icon: '★', title: 'Título a obtener:', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
+    C.card({ icon: '★', title: 'Título a obtener', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
     C.card({ icon: '◎', title: 'Área del conocimiento', body: 'Tecnologías de la Información y la Comunicación', variant: 'fact-card' }),
     C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
     `</div>`,
@@ -39,7 +39,7 @@
   ].join('');
 
   const work = [
-    C.header({ title: '¿En qué puedes', highlight: 'trabajar?', subtitle: 'Desarrollando soluciones tecnológicas para empresas y comunidades de todo el mundo.', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en tecnología e inteligencia artificial', imageKey: 'ima_p2', compact: true }),
+    C.header({ title: '¿En qué puedes', highlight: 'trabajar?', subtitle: 'Desarrollando soluciones tecnológicas para empresas de todo el mundo, con posibilidad de trabajo remoto.', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en tecnología e inteligencia artificial', imageKey: 'ima_p2', compact: true }),
     `<div class="career-grid">${careers.map(C.careerCard).join('')}</div>`,
     `<div class="section-band">TU FORMACIÓN PUEDE APORTAR EN MUCHOS SECTORES</div>`,
     C.sectorList(['Tecnología', 'Industria', 'Servicios públicos', 'Academia']),
@@ -49,13 +49,32 @@
   const opportunities = [
     C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: '', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en un entorno tecnológico', imageKey: 'ima_p3', compact: true }),
     `<div class="opportunity-stats">`,
-    C.card({ metric: '144', body: 'De 215 inscritos en el periodo 67', variant: 'info-card--yellow info-card--blue-rail' }),
-    `<article class="abet-card"><img src="assets/images/abet-accreditation-white.png" alt="Carrera acreditada internacionalmente por ABET"></article>`,
+    C.card({ metric: '95%', body: 'Tasa de graduados empleados', variant: 'info-card--yellow info-card--blue-rail' }),
+    // `<article class="abet-card"><img src="assets/images/abet-accreditation-white.png" alt="Carrera acreditada internacionalmente por ABET"></article>`,
+    // C.card({ title: 'Acreditación Internacional por ABET', body: 'Computing Accreditation Commision (U.S.A)', variant: 'info-card--pale' }),
+
+    C.card({ title: 'Modalidad de trabajo', body: 'Posibilidad de trabajo presencial y remoto', variant: 'info-card--pale' }),
     C.card({ title: 'Amplio campo laboral', body: 'Software, IA, redes e infraestructura tecnológica', variant: 'info-card--pale' }),
     `</div>`,
     `<div class="postgraduate-grid">`,
-    C.card({ icon: '4+1', title: 'Proyección académica en la UPS', body: 'Maestría en Software<br>Maestría en Seguridad de la Información', variant: 'postgraduate-card' }),
-    C.card({ icon: '↑', title: 'Proyección académica en la UPS', body: 'Doctorado en Ciencias Computacionales', variant: 'postgraduate-card postgraduate-card--dark' }),
+    C.card({
+      icon: '4+1',
+      title: 'Proyección académica en la UPS',
+      body: 'Maestría en Software<br>Maestría en Seguridad de la Información<br>* Doctorado en Ciencias Computacionales',
+      variant: 'postgraduate-card'
+    }),
+    // C.card({
+    //   icon: '⌂',
+    //   title: 'Modalidad de trabajo',
+    //   body: 'Posibilidad de trabajo presencial y remoto',
+    //   variant: 'postgraduate-card '
+    // }),
+    C.card({
+      icon: '🌐',
+      title: 'Acreditación internacional por ABET',
+      body: 'Computing Accreditation Commission (U.S.A.)',
+      variant: 'postgraduate-card '
+    }),
     `</div>`,
     `<div class="section-band opportunity-band">TU FUTURO PUEDE ESTAR EN LA TECNOLOGÍA</div>`,
     `<div class="admission-link">Conoce la oferta académica y el proceso de admisión en www.ups.edu.ec</div>`,
