@@ -3,18 +3,19 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[character]);
 
-  function imageFrame(src, alt, extraClass = '') {
-    return `<figure class="image-frame ${extraClass}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}"></figure>`;
+  function imageFrame(src, alt, extraClass = '', imageKey = '') {
+    const requestedImage = imageKey ? ` data-image-key="${escapeHtml(imageKey)}"` : '';
+    return `<figure class="image-frame ${extraClass}"><img src="${escapeHtml(src)}"${requestedImage} alt="${escapeHtml(alt)}"></figure>`;
   }
 
-  function header({ title, highlight, subtitle, image, imageAlt, compact = false, logo = false, accreditation = false }) {
+  function header({ title, highlight, subtitle, image, imageAlt, imageKey = '', compact = false, logo = false, accreditation = false }) {
     const brand = logo ? `<div class="brand-lockup"><img src="assets/images/ups-logo-white.webp" alt="Universidad Politécnica Salesiana"><span>Carrera de<br>Computación<small>Sede Cuenca</small></span></div>` : '';
     const heading = `<h1>${escapeHtml(title)}${highlight ? `<span class="title-highlight">${escapeHtml(highlight)}</span>` : ''}</h1>`;
     const subtitleMarkup = subtitle ? `<p class="hero-subtitle">${escapeHtml(subtitle)}</p>` : '';
     const accreditationMarkup = accreditation ? `<img class="hero-accreditation" src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET">` : '';
     return `<div class="slide-header ${compact ? 'slide-header--compact' : ''}">
       <div class="hero-panel">${brand}${heading}${subtitleMarkup}${accreditationMarkup}</div>
-      ${imageFrame(image, imageAlt, 'slide-header__image')}
+      ${imageFrame(image, imageAlt, 'slide-header__image', imageKey)}
     </div>`;
   }
 

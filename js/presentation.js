@@ -21,7 +21,7 @@
     `<p class="cover-description">Diseña soluciones inteligentes, crea y utiliza modelos y agentes de IA para resolver problemas y automatizar tareas.</p>`,
     `<img class="hero-accreditation" src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET">`,
     `</div>`,
-    C.imageFrame('assets/images/students-collaborating.jpg', 'Dos estudiantes colaboran frente a una laptop', 'cover-photo'),
+    C.imageFrame('assets/images/students-collaborating.jpg', 'Estudiantes colaborando en un proyecto de computación', 'cover-photo', 'ima_p1'),
     `</div>`,
     `<div class="cover-facts">`,
     C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
@@ -33,7 +33,7 @@
   ].join('');
 
   const work = [
-    C.header({ title: '¿En qué puedes', highlight: 'trabajar?', subtitle: 'Desarrollando soluciones tecnológicas para empresas y comunidades de todo el mundo.', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Ilustración de paisaje tecnológico', compact: true }),
+    C.header({ title: '¿En qué puedes', highlight: 'trabajar?', subtitle: 'Desarrollando soluciones tecnológicas para empresas y comunidades de todo el mundo.', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en tecnología e inteligencia artificial', imageKey: 'ima_p2', compact: true }),
     `<div class="career-grid">${careers.map(C.careerCard).join('')}</div>`,
     `<div class="section-band">TU FORMACIÓN PUEDE APORTAR EN MUCHOS SECTORES</div>`,
     C.sectorList(['Tecnología', 'Industria', 'Servicios públicos', 'Academia']),
@@ -41,7 +41,7 @@
   ].join('');
 
   const opportunities = [
-    C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: 'QUE LLAMAN LA ATENCIÓN', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Ilustración de paisaje tecnológico', compact: true }),
+    C.header({ title: 'Beneficios y', highlight: 'oportunidades', subtitle: 'QUE LLAMAN LA ATENCIÓN', image: 'assets/images/technology-landscape.jpg', imageAlt: 'Estudiante trabajando en un entorno tecnológico', imageKey: 'ima_p3', compact: true }),
     `<div class="opportunity-stats">`,
     C.card({ metric: '144', body: 'De 215 inscritos en el periodo 67', variant: 'info-card--yellow info-card--blue-rail' }),
     `<article class="abet-card"><img src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET"></article>`,
@@ -60,6 +60,7 @@
   slides.push(C.slide('work-slide', work, 'En qué puedes trabajar'));
   slides.push(C.slide('opportunity-slide', opportunities, 'Beneficios y oportunidades'));
   deck.innerHTML = slides.join('');
+  resolveRequestedImages();
 
   const slideElements = [...deck.querySelectorAll('.slide')];
   const counter = document.getElementById('slide-counter');
@@ -88,33 +89,51 @@
   }, { threshold: 0.55 });
   slideElements.forEach((slide) => observer.observe(slide));
 
+  function resolveRequestedImages() {
+    const extensions = ['png', 'jpg', 'jpeg', 'webp'];
+    const images = [...deck.querySelectorAll('img[data-image-key]')];
+    return Promise.all(images.map((image) => new Promise((resolve) => {
+      const key = image.dataset.imageKey;
+      const candidates = [
+        `assets/${key}`,
+        ...extensions.map((extension) => `assets/${key}.${extension}`),
+        `assets/images/${key}`,
+        ...extensions.map((extension) => `assets/images/${key}.${extension}`)
+      ];
+      const tryNext = (index) => {
+        if (index >= candidates.length) return resolve();
+        const candidate = new Image();
+        candidate.onload = () => { image.src = candidates[index]; resolve(); };
+        candidate.onerror = () => tryNext(index + 1);
+        candidate.src = candidates[index];
+      };
+      tryNext(0);
+    })));
+  }
+
   document.getElementById('download-pdf').addEventListener('click', async (event) => {
     const button = event.currentTarget;
     const status = document.getElementById('download-status');
-    if (typeof window.html2pdf !== 'function') {
-      status.textContent = 'No se pudo cargar el generador PDF. Comprueba tu conexión e inténtalo de nuevo.';
-      return;
-    }
     button.disabled = true;
-    status.textContent = 'Generando PDF…';
-    const options = {
-      margin: 0,
-      filename: 'Ingenieria-en-Ciencias-de-la-Computacion-UPS-Cuenca.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, foreignObjectRendering: true, backgroundColor: '#f7f9fd', scrollX: 0, scrollY: 0, windowWidth: 1280 },
-      jsPDF: { unit: 'in', format: [13.333333, 7.5], orientation: 'landscape', compress: true },
-      pagebreak: { mode: ['css', 'legacy'], after: '.slide:not(:last-child)' }
-    };
+    status.textContent = 'Preparando las tres diapositivas para exportar…';
     try {
+      await resolveRequestedImages();
       await Promise.all([...deck.querySelectorAll('img')].map((image) => image.decode ? image.decode().catch(() => {}) : Promise.resolve()));
-      await window.html2pdf().set(options).from(deck).save();
-      status.textContent = 'PDF descargado.';
+      window.setTimeout(() => {
+        window.print();
+        button.disabled = false;
+        status.textContent = 'En el diálogo de impresión, selecciona “Guardar como PDF”.';
+        window.setTimeout(() => { status.textContent = ''; }, 7000);
+      }, 100);
     } catch (error) {
-      console.error('Error al generar PDF:', error);
-      status.textContent = 'No se pudo generar el PDF. Recarga la página e inténtalo de nuevo.';
-    } finally {
+      console.error('Error al preparar la presentación:', error);
+      status.textContent = 'No se pudo preparar la presentación para PDF.';
       button.disabled = false;
-      window.setTimeout(() => { status.textContent = ''; }, 5000);
     }
+  });
+
+  window.addEventListener('afterprint', () => {
+    const button = document.getElementById('download-pdf');
+    if (button) button.disabled = false;
   });
 })();
