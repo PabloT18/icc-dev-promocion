@@ -28,7 +28,6 @@
   min-height: 0;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
   align-content: center;
   gap: 12px;
   padding: 3.5% 4.5%;
@@ -79,8 +78,8 @@
 
 
 .hero-accreditation {
-  width: 450px;
-  max-height: 72px;
+  width: 500px;
+  max-height: 82px;
   object-fit: contain;
   object-position: center;
   justify-self: center;

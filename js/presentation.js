@@ -31,7 +31,7 @@
     `</div>`,
     `<div class="cover-facts">`,
     C.card({ icon: '★', title: 'Título a obtener', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
-    C.card({ icon: '◎', title: 'Área del conocimiento', body: 'Tecnologías de la Información y la Comunicación', variant: 'fact-card' }),
+    C.card({ icon: '◎', title: 'Área del conocimiento', body: 'Tecnologías de la Información y Comunicación', variant: 'fact-card' }),
     C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
     `</div>`,
     `<div class="cover-slogan">TECNOLOGÍA QUE RESUELVE PROBLEMAS REALES</div>`,
