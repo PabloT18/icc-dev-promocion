@@ -118,7 +118,7 @@
     status.textContent = 'Preparando las tres diapositivas para exportar…';
     try {
       await resolveRequestedImages();
-      await Promise.all([...deck.querySelectorAll('img')].map((image) => image.decode ? image.decode().catch(() => {}) : Promise.resolve()));
+      await Promise.all([...deck.querySelectorAll('img')].map((image) => image.decode ? image.decode().catch(() => { }) : Promise.resolve()));
       window.setTimeout(() => {
         window.print();
         button.disabled = false;
