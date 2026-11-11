@@ -6,7 +6,6 @@
 .cover-layout {
   min-height: 0;
   display: grid;
-  /* grid-template-columns: 1.5fr 1fr; */
   grid-template-columns: 1.5fr 1fr;
   gap: 2.2%;
   padding: 5px;
@@ -16,7 +15,6 @@
 
 .cover-photo {
   width: 85%;
-  /* height: 100%; */
   justify-self: center;
   align-self: center;
 }

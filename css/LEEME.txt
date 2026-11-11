@@ -1,26 +1,16 @@
-ESTILOS PRESENTACIÓN UPS
+CSS revisados para la presentación UPS
 
-Estructura
-- css/root.css: punto de entrada que importa los demás estilos.
-- css/tokens.css: variables, tipografía y estilos generales.
-- css/layout.css: barra de controles, deck y diapositivas.
-- css/headers.css: encabezados, paneles e imágenes.
-- css/components.css: tarjetas, iconos y pie institucional.
-- css/cover.css: portada.
-- css/career.css: contenido y grilla de oportunidades laborales.
-- css/opportunities.css: P2/P3 y estadísticas de oportunidades.
-- css/responsive.css: ajustes para pantallas estrechas.
-- css/print.css: salida de impresión/PDF.
+Cambios aplicados
+- responsive.css conserva las reglas móviles dentro de @media screen (max-width: 800px), por lo que no reduce las fuentes, tarjetas ni logos al imprimir.
+- print.css conserva el formato 16:9 y los ajustes necesarios para imprimir. No redefine tamaños de fuente, padding, gaps, logos ni componentes: heredan los valores de los estilos normales.
+- Se eliminaron de responsive.css las copias de estilos generales que estaban duplicadas.
+- cover.css conserva una sola declaración activa por propiedad en el bloque de portada.
 
 Integración
-1. Descomprime la carpeta css en la misma carpeta donde está index.html.
-2. En index.html, elimina el enlace anterior a presentation.css y agrega dentro de <head>:
-   <link rel="stylesheet" href="css/root.css">
-3. Conserva la estructura de clases que generan js/components.js y js/presentation.js.
-4. Abre la página con el servidor local habitual y revisa P2 y P3.
+1. Haz una copia de seguridad de tu carpeta CSS actual.
+2. Reemplaza los CSS por los de esta carpeta, conservando la estructura junto a index.html.
+3. En index.html, enlaza únicamente css/root.css. Ese archivo importa el resto.
+4. Evita enlazar presentation.css además de root.css para no cargar dos hojas completas.
+5. Exporta nuevamente en orientación horizontal y con el tamaño de página 13.333333 x 7.5 pulgadas. Activa imprimir fondos.
 
-Ajustes P2/P3
-Ambas imágenes tienen altura de 220px en pantalla. Para cambiar ambas, modifica el primer valor de grid-template-rows en .work-slide y .opportunity-slide dentro de css/opportunities.css.
-El panel azul se centra dentro de la fila y toma la altura que requiere su contenido. No se cambia su padding ni su tipografía.
-
-Nota: la regla de @media (max-width: 800px) hace la tipografía más pequeña en pantallas angostas. Para impresión, print.css mantiene el formato horizontal definido por @page.
+La vista impresa mantendrá las proporciones tipográficas y los espacios de la vista de escritorio. El navegador puede reducir uniformemente toda la diapositiva si el tamaño de papel elegido no coincide con @page.

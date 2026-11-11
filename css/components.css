@@ -22,6 +22,28 @@
   content: "";
 }
 
+
+.info-card--yellow {
+  border-color: var(--navy);
+  background: var(--yellow);
+}
+
+.info-card--yellow p {
+  color: var(--navy);
+}
+
+
+.info-card--blue-rail::before {
+  background: var(--ink);
+}
+
+.card-metric {
+  margin-bottom: 13px;
+  color: var(--navy);
+  font-size: 45px;
+  line-height: 1;
+}
+
 .info-card h2 {
   margin: 0 0 7px;
   color: var(--ink);
@@ -74,4 +96,16 @@
 
 .fact-card p {
   font-size: 18px;
+}
+
+.admission-link {
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: 9px;
+  background: var(--white);
+  color: var(--navy);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 750;
 }

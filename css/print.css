@@ -4,7 +4,6 @@
 }
 
 @media print {
-
   html,
   body {
     width: 13.333333in;
@@ -39,37 +38,6 @@
     break-after: auto;
     page-break-after: auto;
   }
-
-  .brand-lockup img {
-    width: 300px;
-    max-width: none;
-    max-height: 72px;
-  }
-
-  .cover-title {
-    font-size: 37px;
-  }
-
-  .cover-tagline {
-    font-size: 30px;
-  }
-
-  .cover-description {
-    font-size: 19px;
-  }
-
-  /* .hero-accreditation {
-    width: 190px;
-    max-height: 34px;
-  } */
-  .hero-accreditation {
-    width: 500px;
-    max-height: 82px;
-    object-fit: contain;
-    object-position: center;
-    justify-self: center;
-  }
-
 
   *,
   *::before,

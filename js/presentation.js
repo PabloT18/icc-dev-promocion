@@ -63,12 +63,7 @@
       body: 'Maestría en Software<br>Maestría en Seguridad de la Información<br>* Doctorado en Ciencias Computacionales',
       variant: 'postgraduate-card'
     }),
-    // C.card({
-    //   icon: '⌂',
-    //   title: 'Modalidad de trabajo',
-    //   body: 'Posibilidad de trabajo presencial y remoto',
-    //   variant: 'postgraduate-card '
-    // }),
+
     C.card({
       icon: '🌐',
       title: 'Acreditación internacional por ABET',
