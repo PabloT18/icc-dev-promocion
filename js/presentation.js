@@ -101,11 +101,12 @@
       margin: 0,
       filename: 'Ingenieria-en-Ciencias-de-la-Computacion-UPS-Cuenca.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, backgroundColor: '#f7f9fd', scrollX: 0, scrollY: 0, windowWidth: 1280 },
+      html2canvas: { scale: 2, useCORS: true, foreignObjectRendering: true, backgroundColor: '#f7f9fd', scrollX: 0, scrollY: 0, windowWidth: 1280 },
       jsPDF: { unit: 'in', format: [13.333333, 7.5], orientation: 'landscape', compress: true },
       pagebreak: { mode: ['css', 'legacy'], after: '.slide:not(:last-child)' }
     };
     try {
+      await Promise.all([...deck.querySelectorAll('img')].map((image) => image.decode ? image.decode().catch(() => {}) : Promise.resolve()));
       await window.html2pdf().set(options).from(deck).save();
       status.textContent = 'PDF descargado.';
     } catch (error) {
