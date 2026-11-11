@@ -5,9 +5,9 @@
 
   const careers = [
     { icon: '&lt;/&gt;', title: 'Desarrollo de software', body: 'Apps web, móviles y empresariales.' },
-    { icon: '✚', title: 'Ingeniero/a en Inteligencia Artificial', body: 'Desarrolla soluciones con IA y aprendizaje automático.' },
+    { icon: '✚', title: 'Inteligencia Artificial', body: 'Desarrolla soluciones con IA y aprendizaje automático.' },
     { icon: '▥', title: 'Big Data', body: 'Gestiona datos y crea soluciones para analizarlos.' },
-    { icon: '◇', title: 'Ciberseguridad', body: 'Protege el software y los datos frente a amenazas.' },
+    { icon: '◇', title: 'Ciberseguridad', body: 'Protege el Software, y gestiona proceso de protección de datos' },
     { icon: '✚', title: 'Desarrollador/a de aplicaciones IoT', body: 'Conecta dispositivos y crea soluciones inteligentes.' },
     { icon: '☁', title: 'Computación en la nube', body: 'Diseña y administra servicios e infraestructura cloud.' }
   ];
@@ -15,8 +15,8 @@
   const cover = [
     `<div class="cover-layout">`,
     `<div class="cover-hero">`,
-    `<div class="brand-lockup"><img src="assets/images/ups-logo-white.webp" alt="Universidad Politécnica Salesiana"><span>Carrera de<br>Computación<small>Sede Cuenca</small></span></div>`,
-    `<h1 class="cover-title">Ingeniería en Ciencias<br>de la Computación</h1>`,
+    `<div class="brand-lockup"><img src="assets/images/ups-logo-white.webp" alt="Universidad Politécnica Salesiana"></div>`,
+    `<h1 class="cover-title">Computación</h1>`,
     `<p class="cover-tagline">Transformando ideas en soluciones digitales que impactan</p>`,
     `<p class="cover-description">Diseña soluciones inteligentes, crea y utiliza modelos y agentes de IA para resolver problemas y automatizar tareas.</p>`,
     `<img class="hero-accreditation" src="assets/images/abet-accreditation-white.webp" alt="Carrera acreditada internacionalmente por ABET">`,
@@ -24,9 +24,9 @@
     C.imageFrame('assets/images/students-collaborating.jpg', 'Estudiantes colaborando en un proyecto de computación', 'cover-photo', 'ima_p1'),
     `</div>`,
     `<div class="cover-facts">`,
-    C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
     C.card({ icon: '★', title: 'Título a obtener:', body: 'Ingeniero/a en Ciencias de la Computación', variant: 'fact-card' }),
     C.card({ icon: '◎', title: 'Área del conocimiento', body: 'Tecnologías de la Información y la Comunicación', variant: 'fact-card' }),
+    C.card({ icon: '✦', title: '4 años', body: '8 semestres', variant: 'fact-card' }),
     `</div>`,
     `<div class="cover-slogan">TECNOLOGÍA QUE RESUELVE PROBLEMAS REALES</div>`,
     C.footer()
